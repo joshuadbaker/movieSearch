@@ -2,10 +2,10 @@ $(document).ready(function() {
   $('#search').on('click', function() {
     var search = $('#keyword').val();
 
-    $.getJSON('http://www.omdbapi.com/?s='+search+'&y=&plot=short&r=json', function(response) {
+    $.getJSON('http://www.omdbapi.com/?s='+search+'&y=&plot&tomatoes=true&r=json', function(response) {
       $.each(response.Search, function(i, movie) {
         $('.movie-list').append('<h3>'+movie.Title+'<span><button class="show">details</button></span></h3><div class="details"><ul>'+
-        '<li>'+movie.Year+'</li><li>'+movie.Actors+'</li><li>'+movie.Director+'</li></ul><button class="save-movie">Favorite</button></div>');        
+        '<li>Year: '+movie.Year+'</li><li>Title: '+movie.Type+'</li><li>imdb: '+movie.imdbID+'</li></ul><button class="save-movie">Favorite</button></div>');        
       
         $('.movie-list h3:eq('+i+') .show').on('click', function() {
           $('.details:eq('+i+')').toggle();
