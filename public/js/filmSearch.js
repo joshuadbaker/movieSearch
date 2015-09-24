@@ -11,34 +11,29 @@ $(document).ready(function() {
           $('.details:eq('+i+')').toggle();
         });
 
+        // save favorites
+        $('.save-movie:eq('+i+')').on('click', function() {
+          $.ajax({
+            type: 'POST',
+            data: movie,
+            url: '/index',
+            dataType: 'JSON'
+          }).done(function(response) {
+              
+          });
+        });
         
       });
       
-      // save favorites
-      $('.save-movie').on('click', function() {
-        var newFilm = {
-          title: $('h3').text()
-        }
-        
-        $.ajax({
-          type: 'POST',
-          data: $('h3').text(),
-          url: '/favorites',
-          dataType: 'JSON'
-        }).done(function(response) {
-          
-        });
-      });
-
       // display favorites
       $('.display').on('click', function() {
         $ajax({
           type: 'GET',
           data: response.body,
-          url: '/public/data.json',
+          url: '/favorites',
           dataType: 'JSON'
         }).done(function(response) {
-          $('body').html('<h1>'+body+'<h1>')
+          $('body').html('<h1>'+response.body+'<h1>')
         });
       });
     });

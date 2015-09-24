@@ -43,18 +43,18 @@ app.get('/favorites', function(request, response){
 });
 
 // route for persisting data
-app.post('/favorites', function (request, response) {
+app.post('/index', function (request, response) {
    console.log(request);
    console.log('request received');
    response.redirect('/index');
 });
 
 // route for displaying persisted data
-// app.get('/favorites', function (request, response) {
-//    console.log(request);
-//    console.log('request received');
-//    response.redirect('/favorites');
-// });
+app.get('/favorites', function (request, response) {
+   console.log(request);
+   console.log('request received');
+   response.redirect('/favorites');
+});
 
 app.get('*', function(request, response) {
   response.sendfile('./public/index.html')
