@@ -13,32 +13,34 @@ $(document).ready(function() {
 
         
       });
+      
+      // save favorites
       $('.save-movie').on('click', function() {
         var newFilm = {
           title: $('h3').text()
         }
-        // alert(newFilm.title);
+        
         $.ajax({
           type: 'POST',
-          data: newFilm,
-          url: '/index',
+          data: $('h3').text(),
+          url: '/favorites',
           dataType: 'JSON'
         }).done(function(response) {
           
-        })
+        });
       });
 
-      // $getJSON('/favorites', function(data) {
-      //   var favoritesArray = [];
-      // });
-
-      
-        
-
-      
-      // createFavorite = function()
-      // $.http.get('/favorites')-----displays favorites
-
+      // display favorites
+      $('.display').on('click', function() {
+        $ajax({
+          type: 'GET',
+          data: response.body,
+          url: '/public/data.json',
+          dataType: 'JSON'
+        }).done(function(response) {
+          $('body').html('<h1>'+body+'<h1>')
+        });
+      });
     });
   });
 });
