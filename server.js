@@ -48,7 +48,7 @@ app.post('/index', function (request, response) {
 //   response.sendFile('application/public/index.html')
 // });
 // listen not list
-app.listen(process.env.PORT || 8080)''
+app.listen(process.env.PORT || 8080);
 
 
 
