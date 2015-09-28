@@ -4,7 +4,7 @@ $(document).ready(function() {
     var search = $('#keyword').val();
 
     // API call to the website.  Will return JSON dat
-    $.getJSON('http://www.omdbapi.com/?s='+search+'&y=&plot&tomatoes=true&r=json', function(response) {
+    $.getJSON('https://www.omdbapi.com/?s='+search+'&y=&plot&tomatoes=true&r=json', function(response) {
       $.each(response.Search, function(i, movie) {
         $('.movie-list').append('<h3>'+movie.Title+'<span><button class="show">details</button></span></h3><div class="details"><ul>'+
         '<li>Year: '+movie.Year+'</li><li>Title: '+movie.Type+'</li><li>imdb: '+movie.imdbID+'</li></ul><button class="save-movie">Favorite</button></div>');        
