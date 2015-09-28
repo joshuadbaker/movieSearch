@@ -41,13 +41,10 @@ app.get('/favorites', function(request, response){
 app.post('/index', function (request, response) {
    console.log(request.body);
    fs.writeFile('./data.json', JSON.stringify(request.body));
-   // fs.appendFile('./data.json', JSON.stringify(request.body)+', ');
 });
 
-// app.get('*', function(request, response) {
-//   response.sendFile('application/public/index.html')
-// });
 // listen not list
+// call the 'listen' method on either the Heroku assigned server port OR(||) local host
 app.listen(process.env.PORT || 8080);
 
 
