@@ -18,6 +18,7 @@ $(document).ready(function() {
         });
 
         // save favorites with AJAX on a click event created by the save movie button
+        // This is currently working as expected.  Data is being written in the data.json file and it displays on '/favorites' in the browser, but doesn't appear to be giving a success or error alert as coded below.  
         $('.save-movie:eq('+i+')').on('click', function() {
           $.ajax({
             type: 'POST',

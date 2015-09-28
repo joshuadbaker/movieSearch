@@ -7,7 +7,6 @@ var path = require('path');
 
 
 // configuration =================
-
 app.use(express.static(path.join(__dirname, '/public')));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -38,6 +37,7 @@ app.get('/favorites', function(request, response){
 });
 
 // route for persisting data
+// I'm not sure if fs.writeFile is the correct method to use in this case.  Whatever data I send to the data.json file reaplces what ever is there instead of adding to it.  
 app.post('/index', function (request, response) {
    console.log(request.body);
    fs.writeFile('./data.json', JSON.stringify(request.body));
