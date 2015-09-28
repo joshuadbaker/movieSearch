@@ -38,25 +38,15 @@ app.get('/favorites', function(request, response){
 
 // route for persisting data
 app.post('/index', function (request, response) {
-  i = 0;
    console.log(request.body);
    fs.writeFile('./data.json', JSON.stringify(request.body));
    // fs.appendFile('./data.json', JSON.stringify(request.body)+', ');
-   // response.redirect('/index');
 });
-
-// route for displaying persisted data
-// app.get('/index', function (request, response) {
-//    console.log(request.body);
-//    console.log('request received');
-//    response.sendFile('./data.json')
-//    response.redirect('/favorites');
-// });
 
 // app.get('*', function(request, response) {
 //   response.sendFile('application/public/index.html')
 // });
 // listen not list
-app.listen(3000, function(){
-  console.log("Listening on port 3000");
+app.listen(8080, function(){
+  console.log("Listening on port 8080");
 });
