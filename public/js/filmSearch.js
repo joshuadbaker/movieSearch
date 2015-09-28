@@ -20,9 +20,13 @@ $(document).ready(function() {
             data: movie,
             url: '/index',
             dataType: 'JSON'
+            success: function() {
+              alert('Saved!');
+            }
           }).done(function() {
              // $('.save-movie:eq('+i+')').remove();
              // $('.movie-list:eq('+i+')').append('<h5>Movie Saved!</h5>');
+             
           });
         });
         
