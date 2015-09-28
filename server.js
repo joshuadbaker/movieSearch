@@ -8,11 +8,6 @@ var path = require('path');
 
 // configuration =================
 
-// mongoose.connect('mongodb://localhost/test'); 
-// var database = mongoose.connection;     // connect to mongoDB database
-// database.on('error', console.error.bind(console, 'connection error:'));
-// database.once('open', function (callback) {});
-
 app.use(express.static(path.join(__dirname, '/public')));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -20,7 +15,7 @@ app.use(bodyParser.json());
 // must close each open parens
 app.use('/', express.static(path.join(__dirname, 'public')));
 
-// routes --------------------------------
+// routes
 // must close out anonymous function, identify pattern of '}); and understand how anonymous functions work'
 app.get('/favorites', function(request, response){
   var data = fs.readFileSync('./data.json');
@@ -44,9 +39,11 @@ app.get('/favorites', function(request, response){
 
 // route for persisting data
 app.post('/index', function (request, response) {
+  i = 0;
    console.log(request.body);
    fs.writeFile('./data.json', JSON.stringify(request.body));
-   response.redirect('/index');
+   // fs.appendFile('./data.json', JSON.stringify(request.body)+', ');
+   // response.redirect('/index');
 });
 
 // route for displaying persisted data
@@ -57,10 +54,10 @@ app.post('/index', function (request, response) {
 //    response.redirect('/favorites');
 // });
 
-app.get('*', function(request, response) {
-  response.sendfile('./public/index.html')
-});
+// app.get('*', function(request, response) {
+//   response.sendFile('application/public/index.html')
+// });
 // listen not list
-app.listen(8080, function(){
-  console.log("Listening on port 8080");
+app.listen(3000, function(){
+  console.log("Listening on port 3000");
 });

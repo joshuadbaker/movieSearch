@@ -1,5 +1,6 @@
 $(document).ready(function() {
-  $('#search').on('click', function() {
+  $('#search').on('click', function(event) {
+    event.preventDefault();
     var search = $('#keyword').val();
 
     // API call to the website.  Will return JSON dat
@@ -20,8 +21,8 @@ $(document).ready(function() {
             url: '/index',
             dataType: 'JSON'
           }).done(function() {
-             // $('.save-movie:eq('+i+')').append('<span><h4>You saved this movie!</h4></span>)
-             // alert(movie); 
+             // $('.save-movie:eq('+i+')').remove();
+             // $('.movie-list:eq('+i+')').append('<h5>Movie Saved!</h5>');
           });
         });
         
