@@ -18,6 +18,6 @@
     "npm": "2.5.1"
   },
   "scripts": {
-  "start": "npm server.js"
+  "server.js": "npm"
   }
 }
