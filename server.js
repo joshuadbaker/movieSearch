@@ -5,6 +5,7 @@ var fs = require('fs');
 var bodyParser = require('body-parser');
 var path = require('path');
 
+
 // configuration =================
 
 app.use(express.static(path.join(__dirname, '/public')));
@@ -47,6 +48,10 @@ app.post('/index', function (request, response) {
 //   response.sendFile('application/public/index.html')
 // });
 // listen not list
-app.listen(8080, function(){
-  console.log("Listening on port 8080");
-});
+var portNumber = server.listen(process.env.PORT || 8080);
+app.listen(port_number);
+
+
+
+
+
