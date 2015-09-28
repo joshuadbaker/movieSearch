@@ -9,29 +9,30 @@
   <div class="container">
     <nav class="navbar navbar-default">
       <div class="container">
-      <h1>Movie Search!</h1>
-      <div class="row">
-        <div class="col-lg-6">
-          <form class="navbar-form navbar-left">
-            <div class="input-group">
-              <span class="input-group-btn">
-                <button class="btn btn-default" type="button" id="search">Go!</button>
-              </span>
-              <input type="text" class="form-control" id="keyword" placeholder="Search for...">
-            </div>
-          </form>
-          <span class="navbar-right">
-            <div class="faves-list">
-              <a class="display" href="/favorites">Show Favorite Films!</a>
-            </div>
-          </span>
-        </div>
+        <h1>Movie Search!</h1>
+        <div class="row">
+          <div class="col-lg-6">
+            <form class="navbar-form navbar-left">
+              <div class="input-group">
+                <span class="input-group-btn">
+                  <button class="btn btn-default" type="button" id="search">Go!</button>
+                </span>
+                <input type="text" class="form-control" id="keyword" placeholder="Search for...">
+              </div>
+              <span class="navbar-right">
+              <h3><a id="faves" href="/favorites">Favorites!</a></h3>
+            </span>
+            </form>
+            
+          </div> <!-- col-lg-6 -->
+        </div>  <!-- row -->
       </div>
-    </div>
     </nav>
-    <h3>Search Results</h3>
+    
+    <h3>Search Results <span><button type="button" class="btn btn-default btn-sm">Clear Search</button></span></h3>
     <div class="movie-list">
-    </div> <!-- faves-list -->
+    </div>
+    
   </div><!-- container -->
   <!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> -->
   <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
